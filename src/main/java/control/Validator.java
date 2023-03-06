@@ -8,18 +8,29 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+import jakarta.annotation.Resource;
+
 
 public class Validator {
 
 	private Connection connection;
 
 
+
 	public Validator() {}
 	
-	public Card validateCard1(int numero) throws IllegalCardExeption {
+	public Card validateCard(int numero) throws IllegalCardExeption, NamingException {
 		try {
 			// Connect to the database
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/gab",  "root", "");
+			  Context context = new InitialContext();
+
+			  DataSource dataSource = (DataSource) context.lookup("java:comp/env/jdbc/rh");
+			connection = dataSource.getConnection();
 
 			// Prepare the SQL statement
 			String sql = "SELECT * FROM card ";
@@ -54,10 +65,6 @@ public class Validator {
 		throw new IllegalCardExeption();
 	}
 
-	//HashMap<Integer, Card> Cartes = new HashMap<Integer, Card>();
 
-	//public Card validateCard(int number) {
-		//return Cartes.get(number);
-//	}
 
 }

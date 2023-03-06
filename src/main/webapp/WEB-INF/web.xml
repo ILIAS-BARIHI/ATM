@@ -9,4 +9,18 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ATM</display-name>
+    <servlet-name>ATM</servlet-name>
+    <servlet-class>control.ATM</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ATM</servlet-name>
+    <url-pattern>/ATM</url-pattern>
+  </servlet-mapping>
+  <resource-ref>
+  <res-ref-name>jdbc/rh</res-ref-name>
+  <res-type>javax.sql.DataSource</res-type>
+</resource-ref>
 </web-app>

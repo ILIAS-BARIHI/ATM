@@ -1,27 +1,31 @@
 package control;
 
+import javax.naming.NamingException;
+
 public class ConnectToTerminal {
 	private Card connectedCard;
 
-	public boolean validateCardNumber(int number) throws IllegalCardExeption {
+	public boolean validateCardNumber(int number) throws IllegalCardExeption, NamingException {
 		Validator validator = new Validator();
-		if (validator.validateCard1(number) != null) {
-			this.connectedCard = validator.validateCard1(number);
+		if (validator.validateCard(number) != null) {
+			this.connectedCard = validator.validateCard(number);
+			this.connectedCard.setValidation(true);
 			return true;
 		} else {
+			this.connectedCard.setValidation(false);
+
 			throw new IllegalCardExeption();
 		}
 	}
 
-	public void authenticateCode(int secretCode) throws NumberOfTryExceeded_Exeption {
+	public boolean authenticateCode(int secretCode) throws NumberOfTryExceeded_Exeption {
 		if (connectedCard.checkSecretCode(secretCode)) {
-			System.out.print("vous etes connecte  " + connectedCard.getNom() + "\n");
-		} 
+			
+      return true;		} 
 		else {
 			if (connectedCard.getnbrEssaie() < 4) {
 				connectedCard.addnbrEssaie();
-				System.out.print("mot de passe errone \n");
-			}
+return false;			}
 			else 
 				throw new NumberOfTryExceeded_Exeption();
 		}

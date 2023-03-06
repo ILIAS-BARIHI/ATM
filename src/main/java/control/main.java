@@ -1,8 +1,17 @@
 package control;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.naming.NamingException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 public class main {
 
-	public static void main(String[] args) throws IllegalCardExeption, NumberOfTryExceeded_Exeption  {
+	public static void main(String[] args) throws IllegalCardExeption, NumberOfTryExceeded_Exeption, NamingException  {
 
 ConnectToTerminal a = new ConnectToTerminal();
  a.validateCardNumber(111);

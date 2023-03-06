@@ -1,4 +1,5 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
 </head>
 
 <body>
-
+  
     <div class="container main">
         <div class="row top">
             <div class="col-sm-12">
@@ -36,6 +37,12 @@
                         <div class="col-sm-4" id="content">
                             <h2>INSERT CARD<br> BY CLICKING IT.</h2>
                         </div>
+                          <div class="col-sm-4" id="content">
+                           <h2> <%= request.getAttribute("text1") %> <br>
+                       
+                          <%= request.getAttribute("text2") %></h2>
+                        </div>   
+                        
                         <div class="col-sm-4 group2">
                             <h4 id='option4'></h4>
                             <h4 id='option5'></h4>
@@ -55,7 +62,7 @@
                     <button class=card></button><br>
                     <div class="row">
                         <div class="col-sm-12 image">
-                            <img src="images/card .png" id="card">
+                            <img src="images/card%20.png" id="card">
                         </div>
                     </div>
 
@@ -83,8 +90,9 @@
             <div class="col-sm-2 buttons2">
                 <button class=cancel id=cancel>Cancel</button>
                 <button class=clear id=clear>Clear</button>
-                <button class=enter id=enter>Enter</button>
+                <button type= submit class=enter id=enter>Enter</button>
             </div>
+            </form>
             <div class="col-sm-4 receipt">
                 <h2>Receipt</h2>
                 <button></button>
@@ -97,7 +105,6 @@
         </div>
         
     </div>
-    
-    <script src='js/atm.js'></script>
+     <script src='js/atm.js'></script>
 </body>
 </html>
