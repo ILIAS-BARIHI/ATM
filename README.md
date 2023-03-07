@@ -19,3 +19,7 @@ pour executer l application au tant que web APPLICATION  sue le serveur change l
 ### 
 pour executer les tests il faut exclure la classe main et la servlet ATM afin d obtenire un bon coverage
 pour faire ca il suffit de cliquer au boutton droit de la souris sur le projet -> propriete ->java build paths ->source -> excluded -> add 
+
+
+
+![image](https://user-images.githubusercontent.com/94359353/223516787-4931f905-d759-4149-908e-235ad978d92b.png)
