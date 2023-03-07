@@ -17,9 +17,13 @@ ConnectToTerminal a = new ConnectToTerminal();
  a.validateCardNumber(111);
  a.authenticateCode(141);
  a.authenticateCode(141);
- a.authenticateCode(141);
  a.authenticateCode(111);
-System.out.print(a);
+ a.getConnectedCard().addargent(11);
+ 
+ System.out.print("bonjour " + a.getConnectedCard().getNom() +" \n votre solde est : "+a.getConnectedCard().getsommeArgent() );
+
+
+
 	}
 
 }

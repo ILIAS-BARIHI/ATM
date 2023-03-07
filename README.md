@@ -10,3 +10,12 @@ Enoncé: Carte Bancaire
  code secret.
   Si celui-ci est correct, la carte est connectée. Si le numéro de carte n'est pas légal, le terminal
  refuse la connexion, et si l'utilisateur entre plus de 4 fois un code erroné, le terminal invalide la carte.
+
+
+##### pour executer :
+pour executer au tant que JAVA APPLICATION  tout ca va bien marher 
+pour executer l application au tant que web APPLICATION  sue le serveur change la mode de connexion a la base de donne dans la classe validator commente du code et efface le commentaire sur l autre patie du code 
+
+### 
+pour executer les tests il faut exclure la classe main et la servlet ATM afin d obtenire un bon coverage
+pour faire ca il suffit de cliquer au boutton droit de la souris sur le projet -> propriete ->java build paths ->source -> excluded -> add 

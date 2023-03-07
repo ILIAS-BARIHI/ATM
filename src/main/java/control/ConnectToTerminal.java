@@ -12,8 +12,6 @@ public class ConnectToTerminal {
 			this.connectedCard.setValidation(true);
 			return true;
 		} else {
-			this.connectedCard.setValidation(false);
-
 			throw new IllegalCardExeption();
 		}
 	}
@@ -25,7 +23,7 @@ public class ConnectToTerminal {
 		else {
 			if (connectedCard.getnbrEssaie() < 4) {
 				connectedCard.addnbrEssaie();
-return false;			}
+                return false;			}
 			else 
 				throw new NumberOfTryExceeded_Exeption();
 		}
@@ -33,9 +31,11 @@ return false;			}
 
 	}
 
-	@Override
-	public String toString() {
-		return connectedCard.toString();
+
+
+	public Card getConnectedCard() {
+		// TODO Auto-generated method stub
+		return connectedCard;
 	}
 
 }
